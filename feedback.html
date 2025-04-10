@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Threat Shield - Feedback</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(-45deg, #1f1c2c, #928dab, #00c6ff, #0072ff);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    header, nav, footer {
+      background-color: rgba(0,0,0,0.4);
+      backdrop-filter: blur(10px);
+      padding: 15px;
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    nav ul li a {
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    nav ul li a:hover, nav ul li a.active {
+      color: #00d4ff;
+    }
+    main {
+      flex: 1;
+      padding: 30px 20px;
+      text-align: center;
+    }
+    .feedback-container,
+    .chat-container {
+      background-color: rgba(255,255,255,0.1);
+      padding: 25px;
+      margin: 25px auto;
+      border-radius: 16px;
+      max-width: 500px;
+      width: 90%;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    }
+    textarea, input[type="text"] {
+      width: 90%;
+      padding: 12px;
+      margin-top: 15px;
+      border-radius: 8px;
+      border: none;
+      background-color: rgba(255, 255, 255, 0.15);
+      color: white;
+      resize: none;
+    }
+    textarea::placeholder, input::placeholder {
+      color: rgba(255,255,255,0.7);
+    }
+    button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      background-color: #00d4ff;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #00a1cc;
+    }
+    .notification {
+      margin-top: 10px;
+      font-weight: bold;
+      color: #00ff88;
+    }
+    footer {
+      background-color: rgba(0,0,0,0.5);
+      text-align: center;
+      padding: 15px;
+      font-size: 14px;
+      color: #ccc;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Threat Shield - Feedback</h1>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="phishing_attacks.html">Phishing Attacks</a></li>
+      <li><a href="password.html">Passwords</a></li>
+      <li><a href="Malware.html">Malware</a></li>
+      <li><a href="Online.html">Theft</a></li>
+      <li><a href="wifi.html">Wi-Fi</a></li>
+      <li><a href="feedback.html" class="active">Feedback</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="feedback-container">
+      <h2>Feedback</h2>
+      <form id="feedbackForm">
+        <textarea id="feedbackText" placeholder="Give Your Valuable Feedback..." required></textarea><br>
+        <button type="submit">Submit</button>
+      </form>
+      <div id="feedbackNotification" class="notification"></div>
+    </div>
+
+    <div class="chat-container">
+      <h2>Chat with Us</h2>
+      <input type="text" id="chatInput" placeholder="Type your message..." required><br>
+      <button id="sendMessageButton">Send</button>
+      <div id="chatNotification" class="notification"></div>
+    </div>
+  </main>
+
+  <footer>
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-around; gap: 40px; text-align: left; max-width: 1200px; margin: auto;">
+      
+        <div>
+          <h3 style="color: #00d4ff; margin-bottom: 10px;">About Cyber Guard</h3>
+          <p style="max-width: 300px;">
+            Cyber Guard is a platform built to raise awareness about online threats and cybersecurity best practices. Our goal is to educate users and promote digital safety.
+          </p>
+        </div>
+    
+        <div>
+          <h3 style="color: #00d4ff; margin-bottom: 10px;">Quick Links</h3>
+          <ul style="list-style: none; padding-left: 0; line-height: 1.8;">
+            <li><a href="index.html" style="color: #ccc; text-decoration: none;">Home</a></li>
+            <li><a href="phishing_attacks.html" style="color: #ccc; text-decoration: none;">Phishing</a></li>
+            <li><a href="password.html" style="color: #ccc; text-decoration: none;">Passwords</a></li>
+            <li><a href="feedback.html" style="color: #ccc; text-decoration: none;">Feedback</a></li>
+          </ul>
+        </div>
+    
+        <div>
+          <h3 style="color: #00d4ff; margin-bottom: 10px;">Contact Us</h3>
+          <p>Email: <a href="mailto:support@cyberguard.com" style="color: #ccc;">gsujeethkumar6@gmail.com</a></p>
+          <p>Phone: +91 99595 84698</p>
+          <p>Location: Remote Worldwide</p>
+        </div>
+    
+      </div>
+    
+      <div style="text-align: center; margin-top: 30px; font-size: 13px; color: #aaa;">
+        &copy; 2024 Cyber Guard. All rights reserved.
+      </div>
+  </footer>
+
+  <script>
+    // Feedback submission
+    document.getElementById('feedbackForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const feedback = document.getElementById('feedbackText').value.trim();
+      const notify = document.getElementById('feedbackNotification');
+      if (feedback) {
+        notify.textContent = "✅ Your feedback has been submitted successfully.";
+        document.getElementById('feedbackText').value = "";
+      } else {
+        notify.textContent = "⚠️ Please enter feedback before submitting.";
+      }
+    });
+
+    // Chat message
+    document.getElementById('sendMessageButton').addEventListener('click', function() {
+      const chatInput = document.getElementById('chatInput').value.trim();
+      const chatNote = document.getElementById('chatNotification');
+      if (chatInput) {
+        chatNote.textContent = "✅ Your message has been sent.";
+        document.getElementById('chatInput').value = "";
+      } else {
+        chatNote.textContent = "⚠️ Please enter a message before sending.";
+      }
+    });
+  </script>
+</body>
+</html>

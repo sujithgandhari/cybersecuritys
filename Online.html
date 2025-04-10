@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Threat Shield - Online Theft & Fraud</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(-45deg, #1f1c2c, #928dab, #00c6ff, #0072ff);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    @keyframes gradientBG {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+    header, nav, footer {
+      background-color: rgba(0,0,0,0.4);
+      backdrop-filter: blur(10px);
+      padding: 15px;
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    nav ul li a {
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    nav ul li a:hover, nav ul li a.active {
+      color: #00d4ff;
+    }
+    main {
+      flex: 1;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    video {
+      width: 80%;
+      max-width: 600px;
+      border-radius: 12px;
+      margin: 20px auto;
+      display: block;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+    .checker-box {
+      background-color: rgba(255,255,255,0.1);
+      padding: 30px;
+      margin: 30px auto;
+      border-radius: 16px;
+      width: 90%;
+      max-width: 500px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    }
+    .checker-box input {
+      padding: 10px;
+      width: 80%;
+      border-radius: 8px;
+      border: none;
+      margin-bottom: 15px;
+    }
+    .checker-box input[type="submit"] {
+      background-color: #00d4ff;
+      padding: 10px 20px;
+      border: none;
+      color: white;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .checker-box input[type="submit"]:hover {
+      background-color: #00a1cc;
+    }
+    footer {
+      background-color: rgba(0,0,0,0.5);
+      text-align: center;
+      padding: 15px;
+      font-size: 14px;
+      color: #ccc;
+    }
+    ul.tips {
+      text-align: left;
+      font-size: 14px;
+      margin-top: 10px;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Threat Shield - Online Theft & Fraud</h1>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="phishing_attacks.html">Phishing Attacks</a></li>
+      <li><a href="password.html">Passwords</a></li>
+      <li><a href="Malware.html">Malware</a></li>
+      <li><a href="Online.html" class="active">Theft</a></li>
+      <li><a href="wifi.html">Wi-Fi</a></li>
+      <li><a href="feedback.html">Feedback</a></li>
+    </ul>
+  </nav>
+  <main>
+    <h2>Understanding Online Theft</h2>
+    <p><strong>Online theft includes stealing your login credentials, bank details, or identity through digital means.</strong></p>
+    <video controls>
+      <source src="online theft.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+    <h2 style="margin-top: 40px;">Check for Breach or Suspicion</h2>
+    <div class="checker-box">
+      <h3><strong>Enter Username or Email ID</strong></h3>
+      <form id="theftChecker">
+        <input type="text" id="inputValue" placeholder="Enter your details..." required>
+        <br>
+        <input type="submit" value="Check Now">
+      </form>
+      <div id="outputResult"></div>
+    </div>
+  </main>
+  <footer>
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-around; gap: 40px; text-align: left; max-width: 1200px; margin: auto;">
+      
+        <div>
+          <h3 style="color: #00d4ff; margin-bottom: 10px;">About Cyber Guard</h3>
+          <p style="max-width: 300px;">
+            Cyber Guard is a platform built to raise awareness about online threats and cybersecurity best practices. Our goal is to educate users and promote digital safety.
+          </p>
+        </div>
+    
+        <div>
+          <h3 style="color: #00d4ff; margin-bottom: 10px;">Quick Links</h3>
+          <ul style="list-style: none; padding-left: 0; line-height: 1.8;">
+            <li><a href="index.html" style="color: #ccc; text-decoration: none;">Home</a></li>
+            <li><a href="phishing_attacks.html" style="color: #ccc; text-decoration: none;">Phishing</a></li>
+            <li><a href="password.html" style="color: #ccc; text-decoration: none;">Passwords</a></li>
+            <li><a href="feedback.html" style="color: #ccc; text-decoration: none;">Feedback</a></li>
+          </ul>
+        </div>
+    
+        <div>
+          <h3 style="color: #00d4ff; margin-bottom: 10px;">Contact Us</h3>
+          <p>Email: <a href="mailto:support@cyberguard.com" style="color: #ccc;">gsujeethkumar6@gmail.com</a></p>
+          <p>Phone: +91 99595 84698</p>
+          <p>Location: Remote Worldwide</p>
+        </div>
+    
+      </div>
+    
+      <div style="text-align: center; margin-top: 30px; font-size: 13px; color: #aaa;">
+        &copy; 2024 Cyber Guard. All rights reserved.
+      </div>
+  </footer>
+
+  <script>
+    document.getElementById('theftChecker').addEventListener('submit', function (event) {
+      event.preventDefault();
+      const input = document.getElementById('inputValue').value.toLowerCase();
+      const output = document.getElementById('outputResult');
+
+      const riskEmails = [
+        '@example.com', '@hackermail.com', '@phishy.net',
+        '@unsafe.org', '@leakedinfo.com', '@databreach.net'
+      ];
+
+      if (
+        input.includes('compromised') || input.includes('suspicious') ||
+        riskEmails.some(domain => input.includes(domain))
+      ) {
+        output.innerHTML = `
+          <span style="color: red; font-weight: bold;">⚠️ Warning: Your data may be at risk!</span>
+          <ul class="tips">
+            <li>Change your password immediately.</li>
+            <li>Enable two-factor authentication.</li>
+            <li>Use a secure password manager.</li>
+            <li>Do not reuse passwords across platforms.</li>
+            <li>Be cautious of phishing links.</li>
+          </ul>`;
+      } else {
+        output.innerHTML = `<span style="color: #00ff88; font-weight: bold;">✅ No immediate threats detected. Stay cautious!</span>`;
+      }
+    });
+  </script>
+</body>
+</html>

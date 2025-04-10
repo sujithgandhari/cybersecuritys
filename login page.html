@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        /* General reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: url('login.webp') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            display: flex;
+            width: 80%;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Cyber Threat Alert Box */
+        .interactive-text {
+            width: 45%;
+            text-align: left;
+            font-size: 18px;
+            padding: 20px;
+        }
+
+        .interactive-text h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #e74c3c;
+        }
+
+        .interactive-text p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .interactive-text .learn-more {
+            color: #1abc9c;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .interactive-text .learn-more:hover {
+            text-decoration: underline;
+        }
+
+        /* Login Box */
+        .login-box {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 40px;
+            border-radius: 12px;
+            width: 380px;
+            text-align: center;
+            box-shadow: 0px 5px 15px rgba(21, 124, 214, 0.3);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .login-box:hover {
+            transform: scale(1.02);
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            font-size: 26px;
+            font-weight: 700;
+            color: #f9f8f2;
+        }
+
+        
+        
+        .textbox { margin-bottom: 20px; position: relative; }
+        .textbox input {
+            width: 100%; padding: 14px; background: #1b1b1b; border: none;
+            border-radius: 8px; color: #ecf0f1; font-size: 16px;
+        }
+        .textbox .toggle-password {
+            position: absolute; right: 10px; top: 50%; transform: translateY(-50%);
+            cursor: pointer; color: white; font-size: 14px;
+        }
+        .checkbox {
+            margin-bottom: 15px;
+            font-size: 14px;
+            text-align: left;
+        }
+
+        .forgot-password {
+            margin-bottom: 10px;
+            text-align: left;
+        }
+
+        .forgot-password a {
+            color: #d9e5ee;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .forgot-password a:hover {
+            text-decoration: underline;
+        }
+
+        .btn {
+            background: linear-gradient(to right, #0986d4, #1670a0);
+            color: white;
+            border: none;
+            padding: 14px;
+            width: 100%;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .btn:hover {
+            background: linear-gradient(to right, #1622a0, #1a42bc);
+            transform: scale(1.05);
+        }
+
+        .create-account {
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        .create-account a {
+            color: #1abc9c;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .create-account a:hover {
+            text-decoration: underline;
+        }
+
+        .security-message {
+            margin-top: 20px;
+            font-size: 13px;
+            color: rgba(236, 240, 241, 0.8);
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <!-- Left Side: Cyber Threat Facts -->
+    <div class="interactive-text">
+        <h3>⚠️ Cyber Threat Alert</h3>
+        <p id="cyberThreat"></p> <!-- Fixed ID to match JavaScript -->
+        <p style="Color:rgb(250, 209, 250)">Stay safe online by staying informed about cyber threats.</p>
+        <p style="Color:rgb(255, 219, 255)">Learn More by Logging into our Website👉🏻</p>
+    </div>
+
+    <!-- Right Side: Login Form -->
+    <div class="login-box">
+        <h2>Login here to know more about Cybersecurity Threats👇🏻</h2>
+        <form id="loginForm">
+            <div class="textbox">
+                <input type="text" placeholder="Username" id="username" required>
+            </div>
+            <div class="textbox">
+                <input type="password" placeholder="Password" id="password" required>
+                <span class="toggle-password">👁</span>
+                <span class="error-message" id="passwordError"></span>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" id="mfa"> Enable Multi-Factor Authentication
+                </label>
+            </div>
+            
+            <button type="submit" class="btn">Login</button>
+        </form>
+        <div class="create-account">
+            <a href="new account.html">Create an Account</a>
+        </div>
+        <div class="security-message">
+            <p>Your information is secured with SSL encryption.</p>
+        </div>
+    </div>
+</div>
+
+<script>
+    let attempts = 0;
+    const maxAttempts = 3;
+    const storedUsers = JSON.parse(localStorage.getItem("users")) || [];
+    document.getElementById("loginForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        if (attempts >= maxAttempts) {
+            alert("Too many failed attempts. Try again later.");
+            return;
+        }
+        let username = document.getElementById("username").value.trim();
+        let password = document.getElementById("password").value.trim();
+        if (!username) {
+            document.getElementById("usernameError").textContent = "Username required";
+            document.getElementById("usernameError").style.display = "block";
+            return;
+        }
+        if (!password) {
+            document.getElementById("passwordError").textContent = "Password required";
+            document.getElementById("passwordError").style.display = "block";
+            return;
+        }
+        let validUser = storedUsers.find(user => user.username === username && user.password === password);
+        if (validUser) {
+            alert("Login Successful! Redirecting...");
+            window.location.href = "index.html";
+        } else {
+            attempts++;
+            document.getElementById("passwordError").textContent = "Invalid credentials";
+            document.getElementById("passwordError").style.display = "block";
+        }
+    });
+   
+        document.querySelector(".toggle-password").addEventListener("click", function() {
+            let passwordField = document.getElementById("password");
+            if (passwordField.type === "password") {
+                passwordField.type = "text";
+                this.textContent = "🙈"; // Change icon to indicate password is visible
+            } else {
+                passwordField.type = "password";
+                this.textContent = "👁"; // Change icon back to indicate password is hidden
+            
+    
+        }
+    });
+    function rotateThreats() {
+        let threats = [
+            "🚨 Phishing Attacks: Don't click on suspicious links!",
+            "🔓 Use strong, unique passwords!",
+            "🦠 Beware of malware downloads!",
+            "🆔 Protect personal information online!",
+            "📡 Avoid public Wi-Fi without a VPN!"
+        ];
+        let index = 0;
+        function updateThreat() {
+            document.getElementById("cyberThreat").textContent = threats[index];
+            index = (index + 1) % threats.length;
+        }
+        updateThreat();
+        setInterval(updateThreat, 5000);
+    }
+    rotateThreats();
+</script>
+</body>
+</html>

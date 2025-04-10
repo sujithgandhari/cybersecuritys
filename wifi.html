@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Threat Shield - Wi-Fi Security</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(-45deg, #1f1c2c, #928dab, #00c6ff, #0072ff);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    @keyframes gradientBG {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+    header, nav, footer {
+      background-color: rgba(0,0,0,0.4);
+      backdrop-filter: blur(10px);
+      padding: 15px;
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    nav ul li a {
+      color: #fff;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    nav ul li a:hover, nav ul li a.active {
+      color: #00d4ff;
+    }
+    main {
+      flex: 1;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .wifi-video {
+      width: 80%;
+      max-width: 600px;
+      border-radius: 10px;
+      margin: 20px auto;
+      display: block;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+    .checker-box {
+      background-color: rgba(255,255,255,0.1);
+      padding: 30px;
+      margin: 30px auto;
+      border-radius: 16px;
+      width: 90%;
+      max-width: 500px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    }
+    .checker-box input {
+      padding: 10px;
+      width: 80%;
+      border-radius: 8px;
+      border: none;
+      margin-bottom: 15px;
+    }
+    .checker-box button {
+      background-color: #00d4ff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .checker-box button:hover {
+      background-color: #00a1cc;
+    }
+    footer {
+      background-color: rgba(0,0,0,0.5);
+      text-align: center;
+      padding: 15px;
+      font-size: 14px;
+      color: #ccc;
+    }
+    ul.tips {
+      text-align: left;
+      font-size: 14px;
+      margin-top: 10px;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Threat Shield - Public Wi-Fi Issues</h1>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="phishing_attacks.html">Phishing Attacks</a></li>
+      <li><a href="password.html">Passwords</a></li>
+      <li><a href="Malware.html">Malware</a></li>
+      <li><a href="Online.html">Theft</a></li>
+      <li><a href="wifi.html" class="active">Wi-Fi</a></li>
+      <li><a href="feedback.html">Feedback</a></li>
+    </ul>
+  </nav>
+  <main>
+    <h2>Public Wi-Fi Threats</h2>
+    <p><strong>Using public Wi-Fi can expose your personal data to hackers. Watch the video below to understand the risks.</strong></p>
+    <video class="wifi-video" controls>
+      <source src="wifi video.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+    <h2 style="margin-top: 40px;">Wi-Fi Security Checker</h2>
+    <p><strong>Enter any Wi-Fi network name to check if it might be risky.</strong></p>
+    <div class="checker-box">
+      <input type="text" id="networkName" placeholder="Enter Wi-Fi SSID">
+      <br>
+      <button onclick="checkSecurity()">Check Now</button>
+      <div id="outputMessage" style="margin-top: 15px;"></div>
+    </div>
+  </main>
+  <footer>
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-around; gap: 40px; text-align: left; max-width: 1200px; margin: auto;">
+      
+        <div>
+          <h3 style="color: #00d4ff; margin-bottom: 10px;">About Cyber Guard</h3>
+          <p style="max-width: 300px;">
+            Cyber Guard is a platform built to raise awareness about online threats and cybersecurity best practices. Our goal is to educate users and promote digital safety.
+          </p>
+        </div>
+    
+        <div>
+          <h3 style="color: #00d4ff; margin-bottom: 10px;">Quick Links</h3>
+          <ul style="list-style: none; padding-left: 0; line-height: 1.8;">
+            <li><a href="index.html" style="color: #ccc; text-decoration: none;">Home</a></li>
+            <li><a href="phishing_attacks.html" style="color: #ccc; text-decoration: none;">Phishing</a></li>
+            <li><a href="password.html" style="color: #ccc; text-decoration: none;">Passwords</a></li>
+            <li><a href="feedback.html" style="color: #ccc; text-decoration: none;">Feedback</a></li>
+          </ul>
+        </div>
+    
+        <div>
+          <h3 style="color: #00d4ff; margin-bottom: 10px;">Contact Us</h3>
+          <p>Email: <a href="mailto:support@cyberguard.com" style="color: #ccc;">gsujeethkumar6@gmail.com</a></p>
+          <p>Phone: +91 99595 84698</p>
+          <p>Location: Remote Worldwide</p>
+        </div>
+    
+      </div>
+    
+      <div style="text-align: center; margin-top: 30px; font-size: 13px; color: #aaa;">
+        &copy; 2024 Cyber Guard. All rights reserved.
+      </div>
+  </footer>
+
+  <script>
+    function checkSecurity() {
+      const networkName = document.getElementById('networkName').value.trim();
+      const outputMessage = document.getElementById('outputMessage');
+      const publicNetworkPatterns = ['free', 'guest', 'open', 'coffee', 'shop', 'hotel', 'airport', 'mall', 'library', 'public'];
+
+      if (networkName === '') {
+        outputMessage.innerHTML = '<span style="color: red; font-weight: bold;">⚠️ Please enter a Wi-Fi SSID.</span>';
+        return;
+      }
+
+      const isPublic = publicNetworkPatterns.some(pattern => networkName.toLowerCase().includes(pattern));
+
+      if (isPublic) {
+        outputMessage.innerHTML = `
+          <span style="color: red; font-weight: bold;">⚠️ Warning: "${networkName}" might be public or unsafe.</span>
+          <ul class="tips">
+            <li>Use VPN for secure browsing.</li>
+            <li>Avoid online banking or shopping.</li>
+            <li>Ensure sites use HTTPS.</li>
+            <li>Turn off auto-connect features.</li>
+            <li>Use personal hotspots if possible.</li>
+          </ul>`;
+      } else {
+        outputMessage.innerHTML = `<span style="color: #00ff88; font-weight: bold;">✅ "${networkName}" seems safe. Stay cautious!</span>`;
+      }
+    }
+  </script>
+</body>
+</html>

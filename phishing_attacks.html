@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cyber Guard - Phishing Attacks</title>
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/4774/4774377.png" type="image/png">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body {
+      height: 100%;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(-45deg, #1f1c2c, #928dab, #00c6ff, #0072ff);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+      color: white;
+      display: flex;
+      flex-direction: column;
+    }
+    @keyframes gradientBG {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+    header.top-header {
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(10px);
+      padding: 15px 0;
+      animation: slideDown 1s ease forwards;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+      position: relative;
+      text-align: center;
+    }
+    .header-content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      color: #00d4ff;
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+    .header-content img {
+      width: 36px;
+      height: 36px;
+      animation: float 2s ease-in-out infinite;
+    }
+    nav {
+      background: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(10px);
+      padding: 15px 0;
+      position: sticky;
+      top: 0;
+      width: 100%;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    }
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+    nav ul li a {
+      color: #fff;
+      font-weight: bold;
+      padding: 10px;
+      text-decoration: none;
+      position: relative;
+      transition: 0.3s ease;
+    }
+    nav ul li a:hover,
+    nav ul li a.active {
+      color: #00d4ff;
+    }
+    nav ul li a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 3px;
+      bottom: -5px;
+      left: 0;
+      background-color: #00d4ff;
+      transition: 0.3s ease-in-out;
+    }
+    nav ul li a:hover::after,
+    nav ul li a.active::after {
+      width: 100%;
+    }
+    main {
+      padding: 40px 20px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      animation: fadeIn 1s ease-out;
+    }
+    h2, p {
+      text-align: center;
+    }
+    .phishing-video {
+      width: 60%;
+      border-radius: 10px;
+      margin: 30px 0;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    }
+    .phishing-checker {
+      background: rgba(0, 0, 0, 0.5);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0px 5px 15px rgba(21, 124, 214, 0.3);
+      width: 100%;
+      max-width: 400px;
+      margin: 30px auto;
+      text-align: center;
+    }
+    .phishing-checker input {
+      padding: 10px;
+      width: 90%;
+      margin-top: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+    }
+    .phishing-checker button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      background-color: #00d4ff;
+      color: #000;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .phishing-checker button:hover {
+      background-color: #00aee0;
+    }
+    .result-message {
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    footer {
+      background-color: rgba(0, 0, 0, 0.5);
+      color: #ccc;
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 14px;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+    @keyframes slideDown {
+      from { transform: translateY(-100%); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <header class="top-header">
+    <div class="header-content">
+      <img src="https://cdn-icons-png.flaticon.com/512/4774/4774377.png" alt="Cyber Guard Icon">
+      <span>Cyber Guard</span>
+    </div>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="phishing_attacks.html" class="active">Phishing</a></li>
+      <li><a href="password.html">Passwords</a></li>
+      <li><a href="Malware.html">Malware</a></li>
+      <li><a href="Online.html">Theft</a></li>
+      <li><a href="wifi.html">Wi-Fi</a></li>
+      <li><a href="feedback.html">Feedback</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h2>Phishing Attacks</h2>
+    <p>Phishing is a type of scam where attackers send you emails to access your personal and banking data.</p>
+    <p>Watch this video for more information:</p>
+
+    <video class="phishing-video" controls>
+      <source src="phishing video.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+    <h2>Phishing Detection Tool</h2>
+    <p><strong>Check if an email or URL is suspicious.</strong></p>
+    <div class="phishing-checker">
+      <label for="phishingInput">Enter URL or Email Content:</label><br>
+      <input type="text" id="phishingInput" placeholder="Paste suspicious link or text here...">
+      <button id="checkPhishing">Check for Phishing</button>
+      <div id="resultMessage" class="result-message"></div>
+    </div>
+  </main>
+
+  <footer>
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-around; gap: 40px; max-width: 1200px; margin: auto; text-align: left;">
+      <div>
+        <h3 style="color: #00d4ff;">About Cyber Guard</h3>
+        <p style="max-width: 300px;">Cyber Guard is your trusted guide to online safety. Learn about phishing, malware, and how to protect your data.</p>
+      </div>
+      <div>
+        <h3 style="color: #00d4ff;">Quick Links</h3>
+        <ul style="list-style: none; padding-left: 0; line-height: 1.8;">
+          <li><a href="index.html" style="color: #ccc;">Home</a></li>
+          <li><a href="phishing_attacks.html" style="color: #ccc;">Phishing</a></li>
+          <li><a href="password.html" style="color: #ccc;">Passwords</a></li>
+          <li><a href="feedback.html" style="color: #ccc;">Feedback</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 style="color: #00d4ff;">Contact Us</h3>
+        <p>Email: <a href="mailto:support@cyberguard.com" style="color: #ccc;">support@cyberguard.com</a></p>
+        <p>Phone: +1 800 123 4567</p>
+        <p>Location: Remote Worldwide</p>
+      </div>
+    </div>
+    <div style="text-align: center; margin-top: 30px; font-size: 13px; color: #aaa;">
+      &copy; 2024 Cyber Guard. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const phishingInput = document.getElementById('phishingInput');
+      const resultMessage = document.getElementById('resultMessage');
+      const checkPhishing = document.getElementById('checkPhishing');
+
+      if (!phishingInput || !resultMessage || !checkPhishing) return;
+
+      const phishingPatterns = [/login/, /update/, /account/, /click here/, /suspended/, /http:\/\/|https:\/\/[^.\s]+\.[^.\s]+\.[^.\s]+/];
+
+      checkPhishing.addEventListener('click', () => {
+        const input = phishingInput.value.toLowerCase().trim();
+        resultMessage.innerHTML = "";
+
+        const phishingDetected = phishingPatterns.some(pattern => pattern.test(input));
+        const missingDotCom = !input.includes(".com");
+
+        if (phishingDetected) {
+          resultMessage.innerHTML += "<span style='color: red;'>Warning: This looks like a phishing attack!</span><br>";
+        }
+
+        if (missingDotCom) {
+          resultMessage.innerHTML += "<br><span style='color: orange;'>⚠️ Caution: The link does not contain '.com', verify its authenticity!</span><br>";
+        }
+
+        if (!phishingDetected && !missingDotCom) {
+          resultMessage.innerHTML = "<span style='color:#c4f585;'>✅ Safe: This doesn't seem to be a phishing attack. Great job staying secure! 🎉</span>";
+        }
+
+        if (!input) {
+          resultMessage.textContent = "Please enter some text or URL to check.";
+          resultMessage.style.color = 'white';
+        }
+      });
+    });
+  </script>
+</body>
+</html>
